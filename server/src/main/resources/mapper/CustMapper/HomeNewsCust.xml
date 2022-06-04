@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.UKHN_backend.server.mapper.CustMapper.HomeNewsCust">
+
+    <update id="increaseViewCount">
+        update home_news_content
+        set view = view + 1
+        where id = #{id}
+    </update>
+
+</mapper>

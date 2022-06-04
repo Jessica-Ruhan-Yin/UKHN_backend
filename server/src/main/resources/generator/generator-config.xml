@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="Mysql" targetRuntime="MyBatis3" defaultModelType="flat">
+
+        <!-- 自动检查关键字，为关键字增加反引号 -->
+        <property name="autoDelimitKeywords" value="true"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <!--覆盖生成XML文件-->
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
+        <!-- 生成的实体类添加toString()方法 -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+
+        <!-- 不生成注释 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/uha_admin?serverTimezone=UTC"
+                        userId="UKHN_backend"
+                        password="UKHN_backend">
+        </jdbcConnection>
+
+        <!-- domain类的位置 -->
+        <javaModelGenerator targetProject="src\main\java"
+                            targetPackage="com.UKHN_backend.server.domain"/>
+
+        <!-- mapper xml的位置 -->
+        <sqlMapGenerator targetProject="src\main\resources"
+                         targetPackage="mapper"/>
+
+        <!-- mapper类的位置 -->
+        <javaClientGenerator targetProject="src\main\java"
+                             targetPackage="com.UKHN_backend.server.mapper"
+                             type="XMLMAPPER" />
+
+<!--        <table tableName="user" domainObjectName="User"/>-->
+<!--        <table tableName="file" domainObjectName="File"/>-->
+<!--        <table tableName="intro_activity_slide" domainObjectName="IntroActivitySlide"/>-->
+<!--        <table tableName="category" domainObjectName="Category"/>-->
+<!--        <table tableName="intro_activity_content" domainObjectName="IntroActivityContent"/>-->
+<!--        <table tableName="intro_activity_url" domainObjectName="IntroActivityUrl"/>-->
+<!--        <table tableName="intro_activity_content_file" domainObjectName="IntroActivityContentFile"/>-->
+<!--        <table tableName="council_members" domainObjectName="CouncilMembers"/>-->
+<!--        <table tableName="intro_enroll" domainObjectName="IntroEnroll"/>-->
+<!--        <table tableName="academic_forum" domainObjectName="AcademicForum"/>-->
+<!--        <table tableName="academic_forum_url" domainObjectName="AcademicForumUrl"/>-->
+<!--        <table tableName="academic_forum_content" domainObjectName="AcademicForumContent"/>-->
+<!--        <table tableName="academic_forum_file" domainObjectName="AcademicForumFile"/>-->
+<!--        <table tableName="academic_report_content" domainObjectName="AcademicReportContent"/>-->
+<!--        <table tableName="academic_report_file" domainObjectName="AcademicReportFile"/>-->
+<!--        <table tableName="academic_report" domainObjectName="AcademicReport"/>-->
+<!--        <table tableName="academic_report_url" domainObjectName="AcademicReportUrl"/>-->
+<!--        <table tableName="academic_seminar" domainObjectName="AcademicSeminar"/>-->
+<!--        <table tableName="academic_seminar_content" domainObjectName="AcademicSeminarContent"/>-->
+<!--        <table tableName="academic_seminar_url" domainObjectName="AcademicSeminarUrl"/>-->
+<!--        <table tableName="academic_seminar_content_file" domainObjectName="AcademicSeminarContentFile"/>-->
+<!--        <table tableName="academic_study_abroad" domainObjectName="AcademicStudyAbroad"/>-->
+<!--        <table tableName="academic_study_abroad_url" domainObjectName="AcademicStudyAbroadUrl"/>-->
+<!--        <table tableName="academic_study_abroad_content" domainObjectName="AcademicStudyAbroadContent"/>-->
+<!--        <table tableName="academic_study_abroad_content_file" domainObjectName="AcademicStudyAbroadContentFile"/>-->
+<!--        <table tableName="collaboration_China" domainObjectName="CollaborationChina"/>-->
+<!--        <table tableName="collaboration_China_content" domainObjectName="CollaborationChinaContent"/>-->
+<!--        <table tableName="collaboration_China_url" domainObjectName="CollaborationChinaUrl"/>-->
+<!--        <table tableName="collaboration_China_content_file" domainObjectName="CollaborationChinaContentFile"/>-->
+<!--        <table tableName="collaboration_UK_Ireland" domainObjectName="CollaborationUKIreland"/>-->
+<!--        <table tableName="collaboration_UK_Ireland_url" domainObjectName="CollaborationUKIrelandUrl"/>-->
+<!--        <table tableName="collaboration_UK_Ireland_content" domainObjectName="CollaborationUKIrelandContent"/>-->
+<!--        <table tableName="collaboration_UK_Ireland_content_file" domainObjectName="CollaborationUKIrelandContentFile"/>-->
+<!--        <table tableName="collaboration_CUI" domainObjectName="CollaborationCUI"/>-->
+<!--        <table tableName="collaboration_CUI_url" domainObjectName="CollaborationCUIUrl"/>-->
+<!--        <table tableName="collaboration_CUI_content" domainObjectName="CollaborationCUIContent"/>-->
+<!--        <table tableName="collaboration_CUI_content_file" domainObjectName="CollaborationCUIContentFile"/>-->
+<!--        <table tableName="home_partners" domainObjectName="HomePartners"/>-->
+<!--        <table tableName="home_news" domainObjectName="HomeNews"/>-->
+<!--        <table tableName="home_news_content" domainObjectName="HomeNewsContent"/>-->
+<!--        <table tableName="home_news_url" domainObjectName="HomeNewsUrl"/>-->
+<!--        <table tableName="home_news_file" domainObjectName="HomeNewsFile"/>-->
+<!--        <table tableName="home_ad" domainObjectName="HomeAd"/>-->
+<!--        <table tableName="home_ad_content" domainObjectName="HomeAdContent"/>-->
+<!--        <table tableName="home_ad_url" domainObjectName="HomeAdUrl"/>-->
+<!--        <table tableName="home_ad_file" domainObjectName="HomeAdFile"/>-->
+<!--        <table tableName="view" domainObjectName="View"/>-->
+<!--                <table tableName="trade_policy" domainObjectName="TradePolicy"/>-->
+<!--                <table tableName="trade_policy_url" domainObjectName="TradePolicyUrl"/>-->
+<!--                <table tableName="trade_policy_content" domainObjectName="TradePolicyContent"/>-->
+<!--                <table tableName="trade_policy_file" domainObjectName="TradePolicyFile"/>-->
+
+<!--                <table tableName="trade_business" domainObjectName="TradeBusiness"/>-->
+<!--                <table tableName="trade_business_url" domainObjectName="TradeBusinessUrl"/>-->
+<!--                <table tableName="trade_business_content" domainObjectName="TradeBusinessContent"/>-->
+<!--                <table tableName="trade_business_file" domainObjectName="TradeBusinessFile"/>-->
+
+<!--                <table tableName="trade_project" domainObjectName="TradeProject"/>-->
+<!--                <table tableName="trade_project_url" domainObjectName="TradeProjectUrl"/>-->
+<!--                <table tableName="trade_project_content" domainObjectName="TradeProjectContent"/>-->
+<!--                <table tableName="trade_project_file" domainObjectName="TradeProjectFile"/>-->
+
+<!--                <table tableName="trade_promotion" domainObjectName="TradePromotion"/>-->
+<!--                <table tableName="trade_promotion_url" domainObjectName="TradePromotionUrl"/>-->
+<!--                <table tableName="trade_promotion_content" domainObjectName="TradePromotionContent"/>-->
+<!--                <table tableName="trade_promotion_file" domainObjectName="TradePromotionFile"/>-->
+    </context>
+</generatorConfiguration>
